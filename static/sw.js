@@ -1,58 +1,71 @@
 importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
-workbox.precaching.precacheAndRoute(
-  [
-    {
-      url: '/_nuxt/4e96604b9b6faa7b33a6.js',
-      revision: 'e2aae38b97dbbec1af97e2cc08a6186a'
-    },
-    {
-      url: '/_nuxt/5c7c590ac97278736975.js',
-      revision: 'b2f0bd0f128620021b803baeebfb24bd'
-    },
-    {
-      url: '/_nuxt/88c572ec5f63c2c9cffd.css',
-      revision: 'f6f681bc2b60676c866186edc5c8edbf'
-    },
-    {
-      url: '/_nuxt/8e85b9482b53f2f9c803.js',
-      revision: '1f0ed6d79399883bd23288b0fb63486b'
-    },
-    {
-      url: '/_nuxt/a7062c21ba920c2ec4cc.css',
-      revision: '3bd188049ae953a98683b1d733112773'
-    },
-    {
-      url: '/_nuxt/ac5359aa692577b74a53.js',
-      revision: 'b2310a708b2d3728f670d9751e2becc4'
-    },
-    {
-      url: '/_nuxt/d6b40f7e1bfdc74fa65b.js',
-      revision: '96986c4808b48f6c904bf8c058a86c07'
-    },
-    {
-      url: '/_nuxt/e8078c1a73967c78f601.css',
-      revision: 'b73fd55b46c59baf26f735a5cc35788f'
-    }
-  ],
+workbox.precaching.precacheAndRoute([
   {
-    cacheId: 'nuxt-contentful-starter',
-    directoryIndex: '/',
-    cleanUrls: false
+    "url": "/_nuxt/14cd7bda6d9da6372071.js",
+    "revision": "2620f03959967384c782d7057356c37b"
+  },
+  {
+    "url": "/_nuxt/2627994822ae55622294.js",
+    "revision": "e4b1004ab2c8ee2070a78745461b1767"
+  },
+  {
+    "url": "/_nuxt/4a4bdeb495ce6738b6f9.js",
+    "revision": "9a555c0d930d1e0fe05bd35efcc5bb13"
+  },
+  {
+    "url": "/_nuxt/4bb053b2f110b2507133.css",
+    "revision": "6aa18cb568d0fb983ea250f70286de3c"
+  },
+  {
+    "url": "/_nuxt/776d7dbde238e1e1035c.css",
+    "revision": "958e6c0aec193af799e59806d9be221d"
+  },
+  {
+    "url": "/_nuxt/78594f811f74a2193aac.js",
+    "revision": "79e96a8b33c923af8b0f868362a1d3a3"
+  },
+  {
+    "url": "/_nuxt/905237b54b474c9b6160.css",
+    "revision": "618100f3d1323b1a4c06cb5da371ba11"
+  },
+  {
+    "url": "/_nuxt/a7d026e6650814292e0b.js",
+    "revision": "2348ddf4121e5c899b88548059ce42d8"
+  },
+  {
+    "url": "/_nuxt/be40de9fe2e7ec240ee1.css",
+    "revision": "caa636a8fad54fdab008ac1f2286258f"
+  },
+  {
+    "url": "/_nuxt/d4451ee862867eaf7cff.js",
+    "revision": "7482f869310c2793bc1c64d489c59277"
+  },
+  {
+    "url": "/_nuxt/d5c940c91182fa95406b.js",
+    "revision": "5ad7845d4b9986840a8a395c85c67662"
+  },
+  {
+    "url": "/_nuxt/dc30d793147c43cc67c9.css",
+    "revision": "c377189f92e65f377c5cf7471b3bba44"
+  },
+  {
+    "url": "/_nuxt/e3d9f4eb8618de56b0f8.js",
+    "revision": "49b23d96dfb32d8e52db1c000d50a6a0"
+  },
+  {
+    "url": "/_nuxt/e8078c1a73967c78f601.css",
+    "revision": "b73fd55b46c59baf26f735a5cc35788f"
   }
-)
+], {
+  "cacheId": "nuxt-contentful-starter",
+  "directoryIndex": "/",
+  "cleanUrls": false
+})
 
 workbox.clientsClaim()
 workbox.skipWaiting()
 
-workbox.routing.registerRoute(
-  new RegExp('/_nuxt/.*'),
-  workbox.strategies.cacheFirst({}),
-  'GET'
-)
+workbox.routing.registerRoute(new RegExp('/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
 
-workbox.routing.registerRoute(
-  new RegExp('/.*'),
-  workbox.strategies.networkFirst({}),
-  'GET'
-)
+workbox.routing.registerRoute(new RegExp('/.*'), workbox.strategies.networkFirst({}), 'GET')
