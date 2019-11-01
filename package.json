@@ -1,0 +1,67 @@
+{
+  "name": "nuxt-contentful-starter",
+  "version": "0.7.0",
+  "keywords": [
+    "nuxt",
+    "vue",
+    "babel",
+    "postcss",
+    "contentful",
+    "stylelint"
+  ],
+  "description": "A starter scaffolding based on Nuxt, Contentful and PostCSS.",
+  "author": "Mattia Astorino (Equinusocio)",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^2.6.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "8.0.0",
+    "nuxt": "^2.4.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^0.0.1",
+    "babel-eslint": "^10.0.1",
+    "contentful": "^7.6.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-default": "^4.0.7",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": ">=12.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": ">=2.16.0",
+    "eslint-plugin-jest": ">=22.3.0",
+    "eslint-plugin-node": ">=8.0.1",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-promise": ">=4.0.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "modern-normalize": "^0.5.0",
+    "nodemon": "^1.18.9",
+    "postcss-easings": "^2.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-html": "^0.36.0",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-reporter": "^6.0.1",
+    "postcss-url": "^8.0.0",
+    "prettier": "^1.16.4",
+    "stylelint": "^10.0.1",
+    "stylelint-config-prettier": "5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-prettier": "1.1.1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge version"
+  ]
+}

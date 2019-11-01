@@ -1,24 +1,83 @@
-# contentfulCMS
-contentfulcms starter
 
-cd in the file 
+![image](https://i.ibb.co/tbdhd9J/n-c.png)
 
-npm install
+This starter allows you to easily connect your nuxt application with the Contentful headless CMS. It also provides some basic configurations.
 
-run this with your custom api codes 
-npm run import-data -- --space-id YOUR_SPACE_ID --management-token YOUR_MANAGEMENT_TOKEN
+- [Getting started](#getting-started)
+  - [Configure](#configure)
+  - [Deploying with Now](#deploying-with-now)
+- [Contentful client usage (example)](#contentful-client-usage-example)
 
-npm run dev
+## Configured Tools
+- Nuxt
+- PostCSS with some plugins
+- Prettier
+- Eslint
+- Stylelint
 
-todo is create an .env file in the root and add your space id and access token
+# Getting started
 
-Then retrieve your contentfulcms stuff with asyncdata
-find it here https://github.com/equinusocio/nuxt-contentful-starter
+You can use `degit` to download the scaffolding directly from Github:
 
-don't forget to add a content model and then fill that content momdel with dummy content.
+```sh
+npx degit equinusocio/nuxt-contentful-starter my-new-project
+```
 
-Copy the asyncData function and change for example services with the content model name that you've given.
+## Configure
 
+After cloning the repo, create an `.env` file at the project root, then add the required contentful keys:
 
+```sh
+CTF_SPACE_ID=""
+CTF_CDA_ACCESS_TOKEN=""
+```
 
+The config file is git ignored by default, but **MAKE SURE TO NOT ADD IT ACCIDENTALLY TO THE REPOSITORY.**
 
+## Deploying with Now
+
+If you want to deploy your nuxt site on Zeit domains with Now, you have to care about few things to make it work:
+
+- Add the required now script `"now-build": "nuxt generate"` to the **package.json**
+- Don't set the `buildDir` option inside `nuxt.config.js`
+- If you're importing local modules/files from outside the `static/` folder (like custom plugins, modules..) make sure to add them to your `now.json` serverFiles using the correct builder:
+
+```json
+{
+  "version": 2,
+  "builds": [{
+    "src": "nuxt.config.js",
+    "use": "@nuxtjs/now-builder",
+    "config": {
+      "serverFiles": ["myModules/**", "plugins/**", "package.json"]
+    }
+  }]
+}
+```
+
+# Contentful client usage (example)
+
+You can use the nuxt `asyncData` function to get data from Contentful:
+
+```html
+<script>
+  import { createClient } from '~/plugins/contentful.js'
+  const client = createClient()
+
+  export default {
+    async asyncData({ env }) {
+      try {
+        let getPosts = await client.getEntries({
+          content_type: 'blogPost',
+          order: '-sys.createdAt'
+        });
+        return {
+          posts: getPosts.items
+        };
+      } catch (e) {
+        console.error(e)
+      }
+    }
+  }
+</script>
+```
