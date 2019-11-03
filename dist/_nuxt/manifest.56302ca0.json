@@ -1,0 +1,1 @@
+{"name":"Nuxt Contentful Starter","short_name":"Nuxt Contentful Starter","description":"A starter scaffolding based on Nuxt, Contentful and PostCSS.","publicPath":"//_nuxt/","icons":[{"src":"apple-touch-icon.png","type":"image/png","sizes":"512x512"}],"start_url":"/?utm_source=homescreen","display":"standalone","background_color":"#FFFFFF","theme_color":"#ffffff","lang":"en"}

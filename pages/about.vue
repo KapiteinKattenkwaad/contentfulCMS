@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-           <div> {{ about.fields.uitlegBoven }}  </div>
+           <div class="title" > {{ about.fields.uitlegBoven }}  </div>
            <div> {{ about.fields.meerUitleg }}  </div>
             <img :src="about.fields.fotoStijn.fields.file.url" :alt="about.fields.titel" v-if="about.fields.fotoStijn" /> 
       </div>
